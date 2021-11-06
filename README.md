@@ -6,25 +6,24 @@
 ---
 
 ## Rule
-1. Disallow references to the below subjects:
-    - `window`
-    - `global`
-    - `globalThis`
-    - `eval`
-    - `Function`
-    - Additional subjects defined in plugin options: `disallowedGlobalReferences`
-2. Only allow to import whitelisted modules.<br>The whitelisted module list:
+1. **THE GLOBAL IDENTIFIER BLACKLIST**:<br>(All references to the below identifiers will be disallowed)
+    - `window`, `global`, `globalThis`
+    - `eval`, `Function`
+    - `localStorage`, `sessionStorage`, `indexedDB`
+    - `document.cookie`
+    - Additional identifiers defined in plugin options: `globalIndentifierBlacklist`
+2. **THE MODULE SOURCE WHITELIST**:<br>(Only the below module sources are allowed to be imported)
     - Modules of the `zalo` category<br>E.g. `import foo from 'zalo/foo'`
-    - All local modules
-    - Additional modules defined in plugin options: `allowedModuleSources`
+    - All local module sources
+    - Additional module sources defined in plugin options: `moduleSourceWhitelist`
 ## Options
-### `{ disallowedGlobalReferences: ['Map', 'WeakMap'] }`
+### `{ globalIndentifierBlacklist: ['foo'] }`
 - Data type: `Array<string>`
-- Usage: Specify addition global subjects which should be prevented from referencing<br>(aka extend the disallowed references list in rule 1).
+- Usage: Specify additional items for the  **THE GLOBAL IDENTIFIER BLACKLIST**
 - Note: Subjects must be global-scoped objects.
-### `{ allowedModuleSources: ['lodash', 'moment'] }`
+### `{ moduleSourceWhitelist: ['bar'] }`
 - Data type: `Array<string>`
-- Usage: Specify addition whitelisted modules <br>(aka extend the allowed modules list in rule 2)
+- Usage: Specify additional items for the **THE MODULE SOURCE WHITELIST**
 - Note:
   - All local modules is whitelisted by default. So there's no need to specify them here.
   - Each module is treated as a module category, hence all sub-categories will be whitelisted as a result.<br>E.g. Category: `'lodash'` -> Sub-categories: `'lodash/foo'`, `'lodash/bar'`, etc.

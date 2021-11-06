@@ -1,0 +1,22 @@
+{
+  "name": "babel-plugin-disallow-unsafe-global-references-and-module-importing",
+  "version": "1.0.0",
+  "description": "Experimental babel plugin used to check unsafe global references and unsafe module importing",
+  "main": "lib/index.js",
+  "repository": "https://github.com/ngquhuanbl/babel-plugin-disallow-unsafe-global-references-and-module-importing.git",
+  "author": "Huan <ngquhuanbl@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "babel-jest": "^27.3.1",
+    "babel-plugin-tester": "^10.1.0",
+    "eslint": "^8.2.0",
+    "jest": "^27.3.1"
+  }
+}
