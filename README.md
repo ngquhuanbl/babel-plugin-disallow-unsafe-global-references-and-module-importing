@@ -11,6 +11,7 @@
     - `eval`, `Function`
     - `localStorage`, `sessionStorage`, `indexedDB`
     - `document.cookie`
+    - `require` (CommonJS)
     - Additional identifiers defined in plugin options: `globalIndentifierBlacklist`
 2. **THE MODULE SOURCE WHITELIST**:<br>(Only the below module sources are allowed to be imported)
     - Modules of the `zalo` category<br>E.g. `import foo from 'zalo/foo'`
